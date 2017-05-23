@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6209C04A1C54256F004E6B66"
-               BuildableName = "ReSwiftRouter.framework"
-               BlueprintName = "ReSwiftRouter-watchOS"
-               ReferencedContainer = "container:ReSwiftRouter.xcodeproj">
+               BuildableName = "ReactiveReSwiftRouter.framework"
+               BlueprintName = "ReactiveReSwiftRouter-watchOS"
+               ReferencedContainer = "container:ReactiveReSwiftRouter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,6 +29,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "6209C04A1C54256F004E6B66"
+            BuildableName = "ReSwiftRouter.framework"
+            BlueprintName = "ReSwiftRouter-watchOS"
+            ReferencedContainer = "container:ReSwiftRouter.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -42,15 +51,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6209C04A1C54256F004E6B66"
-            BuildableName = "ReSwiftRouter.framework"
-            BlueprintName = "ReSwiftRouter-watchOS"
-            ReferencedContainer = "container:ReSwiftRouter.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6209C04A1C54256F004E6B66"
-            BuildableName = "ReSwiftRouter.framework"
-            BlueprintName = "ReSwiftRouter-watchOS"
-            ReferencedContainer = "container:ReSwiftRouter.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

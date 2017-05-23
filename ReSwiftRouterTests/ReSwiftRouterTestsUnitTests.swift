@@ -9,8 +9,8 @@
 import Quick
 import Nimble
 
-import ReSwift
-@testable import ReSwiftRouter
+import ReactiveReSwift
+@testable import ReactiveReSwiftRouter
 
 class ReSwiftRouterUnitTests: QuickSpec {
 

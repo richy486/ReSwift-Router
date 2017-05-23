@@ -7,26 +7,23 @@
 //
 
 import Foundation
-import ReSwift
+import ReactiveReSwift
 
-open class Router<State: StateType>: StoreSubscriber {
+open class Router<State> {
 
-    public typealias NavigationStateTransform = (Subscription<State>) -> Subscription<NavigationState>
-
-    var store: Store<State>
+    public typealias NavigationStateTransform = (Any) -> NavigationState//ReSwiftRouter.NavigationState
+    
     var lastNavigationState = NavigationState()
     var routables: [Routable] = []
     let waitForRoutingCompletionQueue = DispatchQueue(label: "WaitForRoutingCompletionQueue", attributes: [])
 
-    public init(store: Store<State>, rootRoutable: Routable,  stateTransform: @escaping NavigationStateTransform) {
-        self.store = store 
+    public init(rootRoutable: Routable) {
         self.routables.append(rootRoutable)
-        self.store.subscribe(self, transform: stateTransform)
     }
 
+    /// TODO: this wont be called!!
     open func newState(state: NavigationState) {
-        let routingActions = Router.routingActionsForTransitionFrom(
-            lastNavigationState.route, newRoute: state.route)
+        let routingActions = Router.routingActionsForTransitionFrom(lastNavigationState.route, newRoute: state.route)
 
         routingActions.forEach { routingAction in
 

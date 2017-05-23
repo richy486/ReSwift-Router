@@ -6,7 +6,7 @@
 //  Copyright © 2015 DigiTales. All rights reserved.
 //
 
-import ReSwift
+import ReactiveReSwift
 
 public typealias RouteElementIdentifier = String
 public typealias Route = [RouteElementIdentifier]

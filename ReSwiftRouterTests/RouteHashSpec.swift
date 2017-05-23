@@ -6,7 +6,7 @@
 //  Copyright © 2016 Benjamin Encz. All rights reserved.
 //
 
-import ReSwiftRouter
+import ReactiveReSwiftRouter
 import Quick
 import Nimble
 

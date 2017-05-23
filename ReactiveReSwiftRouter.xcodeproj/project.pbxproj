@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		254B3BAD1D3AD6DD00B1E4F0 /* RouteHashSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254B3BAC1D3AD6DD00B1E4F0 /* RouteHashSpec.swift */; };
 		254B3BAE1D3AD6DD00B1E4F0 /* RouteHashSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254B3BAC1D3AD6DD00B1E4F0 /* RouteHashSpec.swift */; };
 		254B3BAF1D3AD6DD00B1E4F0 /* RouteHashSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254B3BAC1D3AD6DD00B1E4F0 /* RouteHashSpec.swift */; };
 		25C0A9CD1C50AF6400139FA7 /* NavigationActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0A9C61C50AF6400139FA7 /* NavigationActions.swift */; };
@@ -17,15 +16,13 @@
 		25C0A9D11C50AF6400139FA7 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0A9CA1C50AF6400139FA7 /* Routable.swift */; };
 		25C0A9D21C50AF6400139FA7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0A9CB1C50AF6400139FA7 /* Router.swift */; };
 		25C0A9D61C50AF8B00139FA7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25C0A9D31C50AF8B00139FA7 /* Info.plist */; };
-		25C0A9D91C50AF8D00139FA7 /* ReSwiftRouterIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0A9D41C50AF8B00139FA7 /* ReSwiftRouterIntegrationTests.swift */; };
-		25C0A9DA1C50AF8F00139FA7 /* ReSwiftRouterTestsUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0A9D51C50AF8B00139FA7 /* ReSwiftRouterTestsUnitTests.swift */; };
 		6209C0531C54257D004E6B66 /* NavigationActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0A9C61C50AF6400139FA7 /* NavigationActions.swift */; };
 		6209C0541C542580004E6B66 /* NavigationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0A9C71C50AF6400139FA7 /* NavigationReducer.swift */; };
 		6209C0551C542582004E6B66 /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0A9C81C50AF6400139FA7 /* NavigationState.swift */; };
 		6209C0561C542585004E6B66 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0A9CA1C50AF6400139FA7 /* Routable.swift */; };
 		6209C0571C542588004E6B66 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0A9CB1C50AF6400139FA7 /* Router.swift */; };
 		6209C05B1C5426C6004E6B66 /* ReSwiftRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 25C0A9C91C50AF6400139FA7 /* ReSwiftRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6209C06B1C5427E0004E6B66 /* ReSwiftRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6209C0611C5427E0004E6B66 /* ReSwiftRouter.framework */; };
+		6209C06B1C5427E0004E6B66 /* ReactiveReSwiftRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6209C0611C5427E0004E6B66 /* ReactiveReSwiftRouter.framework */; };
 		6209C0781C54281E004E6B66 /* NavigationActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0A9C61C50AF6400139FA7 /* NavigationActions.swift */; };
 		6209C0791C542822004E6B66 /* NavigationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0A9C71C50AF6400139FA7 /* NavigationReducer.swift */; };
 		6209C07A1C542824004E6B66 /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0A9C81C50AF6400139FA7 /* NavigationState.swift */; };
@@ -40,18 +37,19 @@
 		6209C0A21C542A6A004E6B66 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0A9CA1C50AF6400139FA7 /* Routable.swift */; };
 		6209C0A31C542A6C004E6B66 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0A9CB1C50AF6400139FA7 /* Router.swift */; };
 		6209C0A41C542A71004E6B66 /* ReSwiftRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 25C0A9C91C50AF6400139FA7 /* ReSwiftRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6209C0AA1C542B89004E6B66 /* ReSwiftRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6209C0881C5428DE004E6B66 /* ReSwiftRouter.framework */; };
+		6209C0AA1C542B89004E6B66 /* ReactiveReSwiftRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6209C0881C5428DE004E6B66 /* ReactiveReSwiftRouter.framework */; };
 		6209C0AB1C542BC7004E6B66 /* ReSwiftRouterTestsUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0A9D51C50AF8B00139FA7 /* ReSwiftRouterTestsUnitTests.swift */; };
 		6209C0AC1C542BCA004E6B66 /* ReSwiftRouterIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0A9D41C50AF8B00139FA7 /* ReSwiftRouterIntegrationTests.swift */; };
-		625E66F61C2000EA0027C288 /* ReSwiftRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625E66CD1C1FFE280027C288 /* ReSwiftRouter.framework */; };
-		D47F3A4F1E0083B700AAA70A /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47F3A4E1E0083B700AAA70A /* ReSwift.framework */; };
-		D47F3A531E0083EB00AAA70A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47F3A511E0083EB00AAA70A /* Nimble.framework */; };
-		D47F3A541E0083EB00AAA70A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47F3A521E0083EB00AAA70A /* Quick.framework */; };
-		D47F3A5F1E0087BE00AAA70A /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47F3A5E1E0087BE00AAA70A /* ReSwift.framework */; };
+		CA8A73021ED36F590046B588 /* ReactiveReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8A73011ED36F590046B588 /* ReactiveReSwift.framework */; };
+		CA8A730D1ED4DBDE0046B588 /* ReactiveReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8A730C1ED4DBDE0046B588 /* ReactiveReSwift.framework */; };
+		CA8A730F1ED4DBF00046B588 /* ReactiveReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8A730E1ED4DBF00046B588 /* ReactiveReSwift.framework */; };
+		CA8A73111ED4DC010046B588 /* ReactiveReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8A73101ED4DC000046B588 /* ReactiveReSwift.framework */; };
+		CA8A731B1ED4E3310046B588 /* ReactiveReSwiftRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625E66CD1C1FFE280027C288 /* ReactiveReSwiftRouter.framework */; };
+		CA8A73211ED4E3440046B588 /* ReSwiftRouterIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0A9D41C50AF8B00139FA7 /* ReSwiftRouterIntegrationTests.swift */; };
+		CA8A73221ED4E3440046B588 /* ReSwiftRouterTestsUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0A9D51C50AF8B00139FA7 /* ReSwiftRouterTestsUnitTests.swift */; };
+		CA8A73231ED4E3440046B588 /* RouteHashSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254B3BAC1D3AD6DD00B1E4F0 /* RouteHashSpec.swift */; };
 		D47F3A681E00880400AAA70A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47F3A621E00880400AAA70A /* Nimble.framework */; };
 		D47F3A6A1E00880400AAA70A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47F3A641E00880400AAA70A /* Quick.framework */; };
-		D47F3A7C1E0088E600AAA70A /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47F3A751E0088E600AAA70A /* ReSwift.framework */; };
-		D47F3A831E0088FE00AAA70A /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47F3A801E0088FE00AAA70A /* ReSwift.framework */; };
 		D47F3A8E1E00891200AAA70A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47F3A871E00891200AAA70A /* Nimble.framework */; };
 		D47F3A901E00891200AAA70A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47F3A891E00891200AAA70A /* Quick.framework */; };
 /* End PBXBuildFile section */
@@ -71,27 +69,14 @@
 			remoteGlobalIDString = 6209C0871C5428DE004E6B66;
 			remoteInfo = "ReSwiftRouter-OSX";
 		};
-		625E66F71C2000EA0027C288 /* PBXContainerItemProxy */ = {
+		CA8A731C1ED4E3310046B588 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 625E66C41C1FFE270027C288 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 625E66CC1C1FFE280027C288;
-			remoteInfo = SwiftFlowRouter;
+			remoteInfo = "ReactiveReSwiftRouter-iOS";
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		D47F3A591E00871200AAA70A /* Copy Files */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 7;
-			files = (
-			);
-			name = "Copy Files";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		254B3BAC1D3AD6DD00B1E4F0 /* RouteHashSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteHashSpec.swift; path = ReSwiftRouterTests/RouteHashSpec.swift; sourceTree = SOURCE_ROOT; };
@@ -105,21 +90,22 @@
 		25C0A9D31C50AF8B00139FA7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ReSwiftRouterTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		25C0A9D41C50AF8B00139FA7 /* ReSwiftRouterIntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReSwiftRouterIntegrationTests.swift; path = ReSwiftRouterTests/ReSwiftRouterIntegrationTests.swift; sourceTree = SOURCE_ROOT; };
 		25C0A9D51C50AF8B00139FA7 /* ReSwiftRouterTestsUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReSwiftRouterTestsUnitTests.swift; path = ReSwiftRouterTests/ReSwiftRouterTestsUnitTests.swift; sourceTree = SOURCE_ROOT; };
-		6209C04B1C54256F004E6B66 /* ReSwiftRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReSwiftRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6209C0611C5427E0004E6B66 /* ReSwiftRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReSwiftRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6209C06A1C5427E0004E6B66 /* ReSwiftRouter-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReSwiftRouter-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6209C0881C5428DE004E6B66 /* ReSwiftRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReSwiftRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6209C0911C5428DE004E6B66 /* ReSwiftRouter.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReSwiftRouter.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		625E66CD1C1FFE280027C288 /* ReSwiftRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReSwiftRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		625E66F11C2000EA0027C288 /* ReSwiftRouterTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReSwiftRouterTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D47F3A4E1E0083B700AAA70A /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = SOURCE_ROOT; };
+		6209C04B1C54256F004E6B66 /* ReactiveReSwiftRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveReSwiftRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6209C0611C5427E0004E6B66 /* ReactiveReSwiftRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveReSwiftRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6209C06A1C5427E0004E6B66 /* ReactiveReSwiftRouter-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReactiveReSwiftRouter-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6209C0881C5428DE004E6B66 /* ReactiveReSwiftRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveReSwiftRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6209C0911C5428DE004E6B66 /* ReactiveReSwiftRouter.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveReSwiftRouter.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		625E66CD1C1FFE280027C288 /* ReactiveReSwiftRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveReSwiftRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA8A72FF1ED36F030046B588 /* ReactiveReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveReSwift.framework; path = Carthage/Build/iOS/ReactiveReSwift.framework; sourceTree = "<group>"; };
+		CA8A73011ED36F590046B588 /* ReactiveReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveReSwift.framework; path = Carthage/Build/iOS/ReactiveReSwift.framework; sourceTree = SOURCE_ROOT; };
+		CA8A730C1ED4DBDE0046B588 /* ReactiveReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveReSwift.framework; path = Carthage/Build/Mac/ReactiveReSwift.framework; sourceTree = SOURCE_ROOT; };
+		CA8A730E1ED4DBF00046B588 /* ReactiveReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ReactiveReSwift.framework; sourceTree = "<group>"; };
+		CA8A73101ED4DC000046B588 /* ReactiveReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ReactiveReSwift.framework; sourceTree = "<group>"; };
+		CA8A73161ED4E3310046B588 /* ReactiveReSwiftRouter-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReactiveReSwiftRouter-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D47F3A511E0083EB00AAA70A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = SOURCE_ROOT; };
 		D47F3A521E0083EB00AAA70A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = SOURCE_ROOT; };
-		D47F3A5E1E0087BE00AAA70A /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/Mac/ReSwift.framework; sourceTree = SOURCE_ROOT; };
 		D47F3A621E00880400AAA70A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
 		D47F3A641E00880400AAA70A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
-		D47F3A751E0088E600AAA70A /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ReSwift.framework; sourceTree = "<group>"; };
-		D47F3A801E0088FE00AAA70A /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ReSwift.framework; sourceTree = "<group>"; };
 		D47F3A871E00891200AAA70A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
 		D47F3A891E00891200AAA70A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,7 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D47F3A831E0088FE00AAA70A /* ReSwift.framework in Frameworks */,
+				CA8A73111ED4DC010046B588 /* ReactiveReSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D47F3A7C1E0088E600AAA70A /* ReSwift.framework in Frameworks */,
+				CA8A730F1ED4DBF00046B588 /* ReactiveReSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6209C06B1C5427E0004E6B66 /* ReSwiftRouter.framework in Frameworks */,
+				6209C06B1C5427E0004E6B66 /* ReactiveReSwiftRouter.framework in Frameworks */,
 				D47F3A8E1E00891200AAA70A /* Nimble.framework in Frameworks */,
 				D47F3A901E00891200AAA70A /* Quick.framework in Frameworks */,
 			);
@@ -155,7 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D47F3A5F1E0087BE00AAA70A /* ReSwift.framework in Frameworks */,
+				CA8A730D1ED4DBDE0046B588 /* ReactiveReSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,7 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6209C0AA1C542B89004E6B66 /* ReSwiftRouter.framework in Frameworks */,
+				6209C0AA1C542B89004E6B66 /* ReactiveReSwiftRouter.framework in Frameworks */,
 				D47F3A681E00880400AAA70A /* Nimble.framework in Frameworks */,
 				D47F3A6A1E00880400AAA70A /* Quick.framework in Frameworks */,
 			);
@@ -173,17 +159,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D47F3A4F1E0083B700AAA70A /* ReSwift.framework in Frameworks */,
+				CA8A73021ED36F590046B588 /* ReactiveReSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		625E66EE1C2000EA0027C288 /* Frameworks */ = {
+		CA8A73131ED4E3310046B588 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				625E66F61C2000EA0027C288 /* ReSwiftRouter.framework in Frameworks */,
-				D47F3A531E0083EB00AAA70A /* Nimble.framework in Frameworks */,
-				D47F3A541E0083EB00AAA70A /* Quick.framework in Frameworks */,
+				CA8A731B1ED4E3310046B588 /* ReactiveReSwiftRouter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,19 +180,20 @@
 				625E66CF1C1FFE280027C288 /* ReSwiftRouter */,
 				625E66F21C2000EA0027C288 /* ReSwiftRouterTests */,
 				625E66CE1C1FFE280027C288 /* Products */,
+				CA8A72FE1ED36F030046B588 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		625E66CE1C1FFE280027C288 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				625E66CD1C1FFE280027C288 /* ReSwiftRouter.framework */,
-				625E66F11C2000EA0027C288 /* ReSwiftRouterTests-iOS.xctest */,
-				6209C04B1C54256F004E6B66 /* ReSwiftRouter.framework */,
-				6209C0611C5427E0004E6B66 /* ReSwiftRouter.framework */,
-				6209C06A1C5427E0004E6B66 /* ReSwiftRouter-tvOSTests.xctest */,
-				6209C0881C5428DE004E6B66 /* ReSwiftRouter.framework */,
-				6209C0911C5428DE004E6B66 /* ReSwiftRouter.xctest */,
+				625E66CD1C1FFE280027C288 /* ReactiveReSwiftRouter.framework */,
+				6209C04B1C54256F004E6B66 /* ReactiveReSwiftRouter.framework */,
+				6209C0611C5427E0004E6B66 /* ReactiveReSwiftRouter.framework */,
+				6209C06A1C5427E0004E6B66 /* ReactiveReSwiftRouter-tvOSTests.xctest */,
+				6209C0881C5428DE004E6B66 /* ReactiveReSwiftRouter.framework */,
+				6209C0911C5428DE004E6B66 /* ReactiveReSwiftRouter.xctest */,
+				CA8A73161ED4E3310046B588 /* ReactiveReSwiftRouter-iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -263,10 +248,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CA8A72FE1ED36F030046B588 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA8A72FF1ED36F030046B588 /* ReactiveReSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D47F3A4D1E00839D00AAA70A /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D47F3A4E1E0083B700AAA70A /* ReSwift.framework */,
+				CA8A73011ED36F590046B588 /* ReactiveReSwift.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -283,7 +276,7 @@
 		D47F3A5D1E0087B100AAA70A /* Mac */ = {
 			isa = PBXGroup;
 			children = (
-				D47F3A5E1E0087BE00AAA70A /* ReSwift.framework */,
+				CA8A730C1ED4DBDE0046B588 /* ReactiveReSwift.framework */,
 			);
 			name = Mac;
 			sourceTree = "<group>";
@@ -301,7 +294,7 @@
 		D47F3A6F1E0088E600AAA70A /* tvOS */ = {
 			isa = PBXGroup;
 			children = (
-				D47F3A751E0088E600AAA70A /* ReSwift.framework */,
+				CA8A730E1ED4DBF00046B588 /* ReactiveReSwift.framework */,
 			);
 			name = tvOS;
 			path = Carthage/Build/tvOS;
@@ -310,7 +303,7 @@
 		D47F3A7E1E0088FE00AAA70A /* watchOS */ = {
 			isa = PBXGroup;
 			children = (
-				D47F3A801E0088FE00AAA70A /* ReSwift.framework */,
+				CA8A73101ED4DC000046B588 /* ReactiveReSwift.framework */,
 			);
 			name = watchOS;
 			path = Carthage/Build/watchOS;
@@ -364,9 +357,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6209C04A1C54256F004E6B66 /* ReSwiftRouter-watchOS */ = {
+		6209C04A1C54256F004E6B66 /* ReactiveReSwiftRouter-watchOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6209C0501C54256F004E6B66 /* Build configuration list for PBXNativeTarget "ReSwiftRouter-watchOS" */;
+			buildConfigurationList = 6209C0501C54256F004E6B66 /* Build configuration list for PBXNativeTarget "ReactiveReSwiftRouter-watchOS" */;
 			buildPhases = (
 				6209C0461C54256F004E6B66 /* Sources */,
 				6209C0471C54256F004E6B66 /* Frameworks */,
@@ -377,14 +370,14 @@
 			);
 			dependencies = (
 			);
-			name = "ReSwiftRouter-watchOS";
+			name = "ReactiveReSwiftRouter-watchOS";
 			productName = "ReSwift-watchOS";
-			productReference = 6209C04B1C54256F004E6B66 /* ReSwiftRouter.framework */;
+			productReference = 6209C04B1C54256F004E6B66 /* ReactiveReSwiftRouter.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		6209C0601C5427E0004E6B66 /* ReSwiftRouter-tvOS */ = {
+		6209C0601C5427E0004E6B66 /* ReactiveReSwiftRouter-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6209C0721C5427E0004E6B66 /* Build configuration list for PBXNativeTarget "ReSwiftRouter-tvOS" */;
+			buildConfigurationList = 6209C0721C5427E0004E6B66 /* Build configuration list for PBXNativeTarget "ReactiveReSwiftRouter-tvOS" */;
 			buildPhases = (
 				6209C05C1C5427E0004E6B66 /* Sources */,
 				6209C05D1C5427E0004E6B66 /* Frameworks */,
@@ -396,14 +389,14 @@
 			);
 			dependencies = (
 			);
-			name = "ReSwiftRouter-tvOS";
+			name = "ReactiveReSwiftRouter-tvOS";
 			productName = "ReSwiftRouter-tvOS";
-			productReference = 6209C0611C5427E0004E6B66 /* ReSwiftRouter.framework */;
+			productReference = 6209C0611C5427E0004E6B66 /* ReactiveReSwiftRouter.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		6209C0691C5427E0004E6B66 /* ReSwiftRouter-tvOSTests */ = {
+		6209C0691C5427E0004E6B66 /* ReactiveReSwiftRouter-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6209C0751C5427E0004E6B66 /* Build configuration list for PBXNativeTarget "ReSwiftRouter-tvOSTests" */;
+			buildConfigurationList = 6209C0751C5427E0004E6B66 /* Build configuration list for PBXNativeTarget "ReactiveReSwiftRouter-tvOSTests" */;
 			buildPhases = (
 				6209C0661C5427E0004E6B66 /* Sources */,
 				6209C0671C5427E0004E6B66 /* Frameworks */,
@@ -415,14 +408,14 @@
 			dependencies = (
 				6209C06D1C5427E0004E6B66 /* PBXTargetDependency */,
 			);
-			name = "ReSwiftRouter-tvOSTests";
+			name = "ReactiveReSwiftRouter-tvOSTests";
 			productName = "ReSwiftRouter-tvOSTests";
-			productReference = 6209C06A1C5427E0004E6B66 /* ReSwiftRouter-tvOSTests.xctest */;
+			productReference = 6209C06A1C5427E0004E6B66 /* ReactiveReSwiftRouter-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		6209C0871C5428DE004E6B66 /* ReSwiftRouter-macOS */ = {
+		6209C0871C5428DE004E6B66 /* ReactiveReSwiftRouter-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6209C0991C5428DE004E6B66 /* Build configuration list for PBXNativeTarget "ReSwiftRouter-macOS" */;
+			buildConfigurationList = 6209C0991C5428DE004E6B66 /* Build configuration list for PBXNativeTarget "ReactiveReSwiftRouter-macOS" */;
 			buildPhases = (
 				6209C0831C5428DE004E6B66 /* Sources */,
 				6209C0841C5428DE004E6B66 /* Frameworks */,
@@ -434,14 +427,14 @@
 			);
 			dependencies = (
 			);
-			name = "ReSwiftRouter-macOS";
+			name = "ReactiveReSwiftRouter-macOS";
 			productName = "ReSwiftRouter-OSX";
-			productReference = 6209C0881C5428DE004E6B66 /* ReSwiftRouter.framework */;
+			productReference = 6209C0881C5428DE004E6B66 /* ReactiveReSwiftRouter.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		6209C0901C5428DE004E6B66 /* ReSwiftRouter-macOSTests */ = {
+		6209C0901C5428DE004E6B66 /* ReactiveReSwiftRouter-macOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6209C09C1C5428DE004E6B66 /* Build configuration list for PBXNativeTarget "ReSwiftRouter-macOSTests" */;
+			buildConfigurationList = 6209C09C1C5428DE004E6B66 /* Build configuration list for PBXNativeTarget "ReactiveReSwiftRouter-macOSTests" */;
 			buildPhases = (
 				6209C08D1C5428DE004E6B66 /* Sources */,
 				6209C08E1C5428DE004E6B66 /* Frameworks */,
@@ -453,14 +446,14 @@
 			dependencies = (
 				6209C0941C5428DE004E6B66 /* PBXTargetDependency */,
 			);
-			name = "ReSwiftRouter-macOSTests";
+			name = "ReactiveReSwiftRouter-macOSTests";
 			productName = "ReSwiftRouter-OSXTests";
-			productReference = 6209C0911C5428DE004E6B66 /* ReSwiftRouter.xctest */;
+			productReference = 6209C0911C5428DE004E6B66 /* ReactiveReSwiftRouter.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		625E66CC1C1FFE280027C288 /* ReSwiftRouter-iOS */ = {
+		625E66CC1C1FFE280027C288 /* ReactiveReSwiftRouter-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 625E66D51C1FFE280027C288 /* Build configuration list for PBXNativeTarget "ReSwiftRouter-iOS" */;
+			buildConfigurationList = 625E66D51C1FFE280027C288 /* Build configuration list for PBXNativeTarget "ReactiveReSwiftRouter-iOS" */;
 			buildPhases = (
 				625E66C81C1FFE280027C288 /* Sources */,
 				625E66C91C1FFE280027C288 /* Frameworks */,
@@ -472,29 +465,27 @@
 			);
 			dependencies = (
 			);
-			name = "ReSwiftRouter-iOS";
+			name = "ReactiveReSwiftRouter-iOS";
 			productName = SwiftFlowRouter;
-			productReference = 625E66CD1C1FFE280027C288 /* ReSwiftRouter.framework */;
+			productReference = 625E66CD1C1FFE280027C288 /* ReactiveReSwiftRouter.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		625E66F01C2000EA0027C288 /* ReSwiftRouterTests-iOS */ = {
+		CA8A73151ED4E3310046B588 /* ReactiveReSwiftRouter-iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 625E66F91C2000EB0027C288 /* Build configuration list for PBXNativeTarget "ReSwiftRouterTests-iOS" */;
+			buildConfigurationList = CA8A731E1ED4E3310046B588 /* Build configuration list for PBXNativeTarget "ReactiveReSwiftRouter-iOSTests" */;
 			buildPhases = (
-				625E66ED1C2000EA0027C288 /* Sources */,
-				625E66EE1C2000EA0027C288 /* Frameworks */,
-				625E66EF1C2000EA0027C288 /* Resources */,
-				D47F3A581E0086C800AAA70A /* Carthage Copy Frameworks */,
-				D47F3A591E00871200AAA70A /* Copy Files */,
+				CA8A73121ED4E3310046B588 /* Sources */,
+				CA8A73131ED4E3310046B588 /* Frameworks */,
+				CA8A73141ED4E3310046B588 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				625E66F81C2000EA0027C288 /* PBXTargetDependency */,
+				CA8A731D1ED4E3310046B588 /* PBXTargetDependency */,
 			);
-			name = "ReSwiftRouterTests-iOS";
-			productName = SwiftFlowRouterTests;
-			productReference = 625E66F11C2000EA0027C288 /* ReSwiftRouterTests-iOS.xctest */;
+			name = "ReactiveReSwiftRouter-iOSTests";
+			productName = "ReactiveReSwiftRouterTests-iOS";
+			productReference = CA8A73161ED4E3310046B588 /* ReactiveReSwiftRouter-iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -503,7 +494,7 @@
 		625E66C41C1FFE270027C288 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Benjamin Encz";
 				TargetAttributes = {
@@ -531,13 +522,13 @@
 						CreatedOnToolsVersion = 7.1.1;
 						LastSwiftMigration = 0800;
 					};
-					625E66F01C2000EA0027C288 = {
-						CreatedOnToolsVersion = 7.1.1;
-						LastSwiftMigration = 0800;
+					CA8A73151ED4E3310046B588 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
-			buildConfigurationList = 625E66C71C1FFE270027C288 /* Build configuration list for PBXProject "ReSwiftRouter" */;
+			buildConfigurationList = 625E66C71C1FFE270027C288 /* Build configuration list for PBXProject "ReactiveReSwiftRouter" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -549,13 +540,13 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				625E66CC1C1FFE280027C288 /* ReSwiftRouter-iOS */,
-				625E66F01C2000EA0027C288 /* ReSwiftRouterTests-iOS */,
-				6209C04A1C54256F004E6B66 /* ReSwiftRouter-watchOS */,
-				6209C0601C5427E0004E6B66 /* ReSwiftRouter-tvOS */,
-				6209C0691C5427E0004E6B66 /* ReSwiftRouter-tvOSTests */,
-				6209C0871C5428DE004E6B66 /* ReSwiftRouter-macOS */,
-				6209C0901C5428DE004E6B66 /* ReSwiftRouter-macOSTests */,
+				625E66CC1C1FFE280027C288 /* ReactiveReSwiftRouter-iOS */,
+				CA8A73151ED4E3310046B588 /* ReactiveReSwiftRouter-iOSTests */,
+				6209C04A1C54256F004E6B66 /* ReactiveReSwiftRouter-watchOS */,
+				6209C0601C5427E0004E6B66 /* ReactiveReSwiftRouter-tvOS */,
+				6209C0691C5427E0004E6B66 /* ReactiveReSwiftRouter-tvOSTests */,
+				6209C0871C5428DE004E6B66 /* ReactiveReSwiftRouter-macOS */,
+				6209C0901C5428DE004E6B66 /* ReactiveReSwiftRouter-macOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -604,7 +595,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		625E66EF1C2000EA0027C288 /* Resources */ = {
+		CA8A73141ED4E3310046B588 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -620,24 +611,7 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/ReSwift.framework",
-			);
-			name = "Carthage Copy Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		D47F3A581E0086C800AAA70A /* Carthage Copy Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ReSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveReSwift.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
@@ -652,7 +626,7 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/ReSwift.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/ReactiveReSwift.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
@@ -684,7 +658,7 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/tvOS/ReSwift.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/ReactiveReSwift.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
@@ -781,13 +755,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		625E66ED1C2000EA0027C288 /* Sources */ = {
+		CA8A73121ED4E3310046B588 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				254B3BAD1D3AD6DD00B1E4F0 /* RouteHashSpec.swift in Sources */,
-				25C0A9D91C50AF8D00139FA7 /* ReSwiftRouterIntegrationTests.swift in Sources */,
-				25C0A9DA1C50AF8F00139FA7 /* ReSwiftRouterTestsUnitTests.swift in Sources */,
+				CA8A73231ED4E3440046B588 /* RouteHashSpec.swift in Sources */,
+				CA8A73211ED4E3440046B588 /* ReSwiftRouterIntegrationTests.swift in Sources */,
+				CA8A73221ED4E3440046B588 /* ReSwiftRouterTestsUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -796,18 +770,18 @@
 /* Begin PBXTargetDependency section */
 		6209C06D1C5427E0004E6B66 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6209C0601C5427E0004E6B66 /* ReSwiftRouter-tvOS */;
+			target = 6209C0601C5427E0004E6B66 /* ReactiveReSwiftRouter-tvOS */;
 			targetProxy = 6209C06C1C5427E0004E6B66 /* PBXContainerItemProxy */;
 		};
 		6209C0941C5428DE004E6B66 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6209C0871C5428DE004E6B66 /* ReSwiftRouter-macOS */;
+			target = 6209C0871C5428DE004E6B66 /* ReactiveReSwiftRouter-macOS */;
 			targetProxy = 6209C0931C5428DE004E6B66 /* PBXContainerItemProxy */;
 		};
-		625E66F81C2000EA0027C288 /* PBXTargetDependency */ = {
+		CA8A731D1ED4E3310046B588 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 625E66CC1C1FFE280027C288 /* ReSwiftRouter-iOS */;
-			targetProxy = 625E66F71C2000EA0027C288 /* PBXContainerItemProxy */;
+			target = 625E66CC1C1FFE280027C288 /* ReactiveReSwiftRouter-iOS */;
+			targetProxy = CA8A731C1ED4E3310046B588 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -829,7 +803,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.benjamin-encz.ReSwiftRouter";
-				PRODUCT_NAME = ReSwiftRouter;
+				PRODUCT_NAME = ReactiveReSwiftRouter;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -855,7 +829,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.benjamin-encz.ReSwiftRouter";
-				PRODUCT_NAME = ReSwiftRouter;
+				PRODUCT_NAME = ReactiveReSwiftRouter;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -880,7 +854,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.benjamin-encz.ReSwiftRouter";
-				PRODUCT_NAME = ReSwiftRouter;
+				PRODUCT_NAME = ReactiveReSwiftRouter;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -905,7 +879,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.benjamin-encz.ReSwiftRouter";
-				PRODUCT_NAME = ReSwiftRouter;
+				PRODUCT_NAME = ReactiveReSwiftRouter;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -967,7 +941,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.benjamin-encz.ReSwiftRouter";
-				PRODUCT_NAME = ReSwiftRouter;
+				PRODUCT_NAME = ReactiveReSwiftRouter;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -993,7 +967,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.benjamin-encz.ReSwiftRouter";
-				PRODUCT_NAME = ReSwiftRouter;
+				PRODUCT_NAME = ReactiveReSwiftRouter;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -1014,7 +988,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.benjamin-encz.ReSwiftRouter";
 				PRODUCT_MODULE_NAME = ReSwiftRouter_OSXTests;
-				PRODUCT_NAME = ReSwiftRouter;
+				PRODUCT_NAME = ReactiveReSwiftRouter;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;
 			};
@@ -1034,7 +1008,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.benjamin-encz.ReSwiftRouter";
 				PRODUCT_MODULE_NAME = ReSwiftRouter_OSXTests;
-				PRODUCT_NAME = ReSwiftRouter;
+				PRODUCT_NAME = ReactiveReSwiftRouter;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;
 			};
@@ -1153,8 +1127,12 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS/ReactiveReSwift.framework",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.benjamin-encz.ReSwiftRouter";
-				PRODUCT_NAME = ReSwiftRouter;
+				PRODUCT_NAME = ReactiveReSwiftRouter;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1178,39 +1156,48 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS/ReactiveReSwift.framework",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.benjamin-encz.ReSwiftRouter";
-				PRODUCT_NAME = ReSwiftRouter;
+				PRODUCT_NAME = ReactiveReSwiftRouter;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
-		625E66FA1C2000EB0027C288 /* Debug */ = {
+		CA8A731F1ED4E3310046B588 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ReSwiftRouterTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "de.benjamin-encz.SwiftFlowRouterTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.benjamin-encz.ReSwiftRouter-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		625E66FB1C2000EB0027C288 /* Release */ = {
+		CA8A73201ED4E3310046B588 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ReSwiftRouterTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "de.benjamin-encz.SwiftFlowRouterTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.benjamin-encz.ReSwiftRouter-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -1218,7 +1205,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6209C0501C54256F004E6B66 /* Build configuration list for PBXNativeTarget "ReSwiftRouter-watchOS" */ = {
+		6209C0501C54256F004E6B66 /* Build configuration list for PBXNativeTarget "ReactiveReSwiftRouter-watchOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6209C0511C54256F004E6B66 /* Debug */,
@@ -1227,7 +1214,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6209C0721C5427E0004E6B66 /* Build configuration list for PBXNativeTarget "ReSwiftRouter-tvOS" */ = {
+		6209C0721C5427E0004E6B66 /* Build configuration list for PBXNativeTarget "ReactiveReSwiftRouter-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6209C0731C5427E0004E6B66 /* Debug */,
@@ -1236,7 +1223,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6209C0751C5427E0004E6B66 /* Build configuration list for PBXNativeTarget "ReSwiftRouter-tvOSTests" */ = {
+		6209C0751C5427E0004E6B66 /* Build configuration list for PBXNativeTarget "ReactiveReSwiftRouter-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6209C0761C5427E0004E6B66 /* Debug */,
@@ -1245,7 +1232,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6209C0991C5428DE004E6B66 /* Build configuration list for PBXNativeTarget "ReSwiftRouter-macOS" */ = {
+		6209C0991C5428DE004E6B66 /* Build configuration list for PBXNativeTarget "ReactiveReSwiftRouter-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6209C09A1C5428DE004E6B66 /* Debug */,
@@ -1254,7 +1241,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6209C09C1C5428DE004E6B66 /* Build configuration list for PBXNativeTarget "ReSwiftRouter-macOSTests" */ = {
+		6209C09C1C5428DE004E6B66 /* Build configuration list for PBXNativeTarget "ReactiveReSwiftRouter-macOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6209C09D1C5428DE004E6B66 /* Debug */,
@@ -1263,7 +1250,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		625E66C71C1FFE270027C288 /* Build configuration list for PBXProject "ReSwiftRouter" */ = {
+		625E66C71C1FFE270027C288 /* Build configuration list for PBXProject "ReactiveReSwiftRouter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				625E66D31C1FFE280027C288 /* Debug */,
@@ -1272,7 +1259,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		625E66D51C1FFE280027C288 /* Build configuration list for PBXNativeTarget "ReSwiftRouter-iOS" */ = {
+		625E66D51C1FFE280027C288 /* Build configuration list for PBXNativeTarget "ReactiveReSwiftRouter-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				625E66D61C1FFE280027C288 /* Debug */,
@@ -1281,14 +1268,13 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		625E66F91C2000EB0027C288 /* Build configuration list for PBXNativeTarget "ReSwiftRouterTests-iOS" */ = {
+		CA8A731E1ED4E3310046B588 /* Build configuration list for PBXNativeTarget "ReactiveReSwiftRouter-iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				625E66FA1C2000EB0027C288 /* Debug */,
-				625E66FB1C2000EB0027C288 /* Release */,
+				CA8A731F1ED4E3310046B588 /* Debug */,
+				CA8A73201ED4E3310046B588 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
