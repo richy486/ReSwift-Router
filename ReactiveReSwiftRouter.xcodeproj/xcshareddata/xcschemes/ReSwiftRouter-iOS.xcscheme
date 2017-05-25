@@ -43,14 +43,24 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CA8A73151ED4E3310046B588"
+               BuildableName = "ReactiveReSwiftRouter-iOSTests.xctest"
+               BlueprintName = "ReactiveReSwiftRouter-iOSTests"
+               ReferencedContainer = "container:ReactiveReSwiftRouter.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "625E66CC1C1FFE280027C288"
-            BuildableName = "ReSwiftRouter.framework"
-            BlueprintName = "ReSwiftRouter-iOS"
-            ReferencedContainer = "container:ReSwiftRouter.xcodeproj">
+            BuildableName = "ReactiveReSwiftRouter.framework"
+            BlueprintName = "ReactiveReSwiftRouter-iOS"
+            ReferencedContainer = "container:ReactiveReSwiftRouter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -84,6 +94,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "625E66CC1C1FFE280027C288"
+            BuildableName = "ReactiveReSwiftRouter.framework"
+            BlueprintName = "ReactiveReSwiftRouter-iOS"
+            ReferencedContainer = "container:ReactiveReSwiftRouter.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
