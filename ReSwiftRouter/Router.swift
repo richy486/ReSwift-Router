@@ -24,6 +24,7 @@ open class Router<State> {
     /// TODO: this wont be called!!
     open func newState(state: NavigationState) {
         let routingActions = Router.routingActionsForTransitionFrom(lastNavigationState.route, newRoute: state.route)
+        let routeHash = RouteHash(route: state.route)
 
         routingActions.forEach { routingAction in
 
@@ -42,6 +43,7 @@ open class Router<State> {
                         self.routables[responsibleRoutableIndex]
                             .popRouteSegment(
                                 segmentToBePopped,
+                                routeHash: routeHash,
                                 animated: state.changeRouteAnimated) {
                                     semaphore.signal()
                         }
@@ -56,6 +58,7 @@ open class Router<State> {
                                 .changeRouteSegment(
                                     segmentToBeReplaced,
                                     to: newSegment,
+                                    routeHash: routeHash,
                                     animated: state.changeRouteAnimated) {
                                         semaphore.signal()
                         }
@@ -67,6 +70,7 @@ open class Router<State> {
                             self.routables[responsibleRoutableIndex]
                                 .pushRouteSegment(
                                     segmentToBePushed,
+                                    routeHash: routeHash,
                                     animated: state.changeRouteAnimated) {
                                         semaphore.signal()
                             }
