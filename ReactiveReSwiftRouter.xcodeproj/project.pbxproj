@@ -48,6 +48,8 @@
 		CA8A73211ED4E3440046B588 /* ReSwiftRouterIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0A9D41C50AF8B00139FA7 /* ReSwiftRouterIntegrationTests.swift */; };
 		CA8A73221ED4E3440046B588 /* ReSwiftRouterTestsUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0A9D51C50AF8B00139FA7 /* ReSwiftRouterTestsUnitTests.swift */; };
 		CA8A73231ED4E3440046B588 /* RouteHashSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254B3BAC1D3AD6DD00B1E4F0 /* RouteHashSpec.swift */; };
+		CAAB3F871EE9BB8A00613AF0 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47F3A511E0083EB00AAA70A /* Nimble.framework */; };
+		CAAB3F881EE9BB8C00613AF0 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47F3A891E00891200AAA70A /* Quick.framework */; };
 		D47F3A681E00880400AAA70A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47F3A621E00880400AAA70A /* Nimble.framework */; };
 		D47F3A6A1E00880400AAA70A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47F3A641E00880400AAA70A /* Quick.framework */; };
 		D47F3A8E1E00891200AAA70A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47F3A871E00891200AAA70A /* Nimble.framework */; };
@@ -168,6 +170,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA8A731B1ED4E3310046B588 /* ReactiveReSwiftRouter.framework in Frameworks */,
+				CAAB3F871EE9BB8A00613AF0 /* Nimble.framework in Frameworks */,
+				CAAB3F881EE9BB8C00613AF0 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +481,7 @@
 				CA8A73121ED4E3310046B588 /* Sources */,
 				CA8A73131ED4E3310046B588 /* Frameworks */,
 				CA8A73141ED4E3310046B588 /* Resources */,
+				CA44F73E1EE9BDB300BB33FC /* Carthage Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -605,6 +610,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		CA44F73E1EE9BDB300BB33FC /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/tvOS/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/Quick.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/ReactiveReSwift.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		D47F3A551E0085A300AAA70A /* Carthage Copy Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -643,7 +665,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/Mac/Nimble.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/Quick.framework",
-				"$(SRCROOT)/Carthage/Build/Mac/ReSwift.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/ReactiveReSwift.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
@@ -675,7 +697,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/tvOS/Nimble.framework",
 				"$(SRCROOT)/Carthage/Build/tvOS/Quick.framework",
-				"$(SRCROOT)/Carthage/Build/tvOS/ReSwift.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/ReactiveReSwift.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
@@ -1174,6 +1196,11 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = ReSwiftRouterTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1192,6 +1219,11 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = ReSwiftRouterTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1275,6 +1307,7 @@
 				CA8A73201ED4E3310046B588 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

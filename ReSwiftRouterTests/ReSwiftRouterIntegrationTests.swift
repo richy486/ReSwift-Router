@@ -61,7 +61,7 @@ class MockRoutable: Routable {
 
 }
 
-struct FakeAppState: StateType {
+struct FakeAppState {
     var navigationState = NavigationState()
 }
 
@@ -75,16 +75,25 @@ func appReducer(action: Action, state: FakeAppState?) -> FakeAppState {
     )
 }
 
+class TestStoreSubscriber<T> {
+    var receivedStates: [T] = []
+    var subscription: ((T) -> Void)!
+    
+    init() {
+        subscription = { self.receivedStates.append($0) }
+    }
+}
+
 class SwiftFlowRouterIntegrationTests: QuickSpec {
 
     override func spec() {
 
         describe("routing calls") {
 
-            var store: Store<FakeAppState>!
+            var store: Store<ObservableProperty<FakeAppState>>!
 
             beforeEach {
-                store = Store(reducer: appReducer, state: FakeAppState())
+                store = Store(reducer: appReducer, observable: ObservableProperty(FakeAppState()))
             }
 
             describe("setup") {
@@ -102,9 +111,8 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
                     }
 
                     let routable = FakeRootRoutable()
-                    let _ = Router(store: store, rootRoutable: routable) { state in
-                        state.select { $0.navigationState }
-                    }
+                    
+                    let _ = Router<Any>(rootRoutable: routable)
 
                     expect(routable.called).to(beFalse())
                 }
@@ -138,10 +146,11 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
                                 fullfill()
                             }
                         }
-
-                        let _ = Router(store: store, rootRoutable: rootRoutable) { state in
-                            state.select { $0.navigationState }
-                        }
+                        
+                        let router = Router<Any>(rootRoutable: rootRoutable)
+                        store.observable.subscribe({ state in
+                            router.newState(state: state.navigationState)
+                        })
                     }
                 }
 
@@ -189,10 +198,10 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
                             }
                         }
 
-                        let _ = Router(store: store, rootRoutable:
-                            FakeRootRoutable(injectedRoutable: fakeChildRoutable)) { state in
-                                state.select { $0.navigationState }
-                            }
+                        let router = Router<Any>(rootRoutable: FakeRootRoutable(injectedRoutable: fakeChildRoutable))
+                        store.observable.subscribe({ state in
+                            router.newState(state: state.navigationState)
+                        })
                     }
                 }
 
@@ -203,10 +212,14 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
 
         describe("route specific data") {
 
-            var store: Store<FakeAppState>!
+            var store: Store<ObservableProperty<FakeAppState>>!
 
             beforeEach {
-                store = Store(reducer: appReducer, state: nil)
+                store = Store(reducer: appReducer, observable: ObservableProperty(FakeAppState()))
+                
+                store.observable.subscribe({ state in
+                    print("state update: \(state)")
+                })
             }
 
             context("when setting route specific data") {
@@ -216,7 +229,8 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
                 }
 
                 it("allows accessing the data when providing the expected type") {
-                    let data: String? = store.state.navigationState.getRouteSpecificState(
+
+                    let data: String? = store.observable.value.navigationState.getRouteSpecificState(
                         ["part1", "part2"]
                     )
 
@@ -229,18 +243,18 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
 
         describe("configuring animated/unanimated navigation") {
 
-            var store: Store<FakeAppState>!
+            var store: Store<ObservableProperty<FakeAppState>>!
             var mockRoutable: MockRoutable!
             var router: Router<FakeAppState>!
 
             beforeEach {
-                store = Store(reducer: appReducer, state: nil)
+                store = Store(reducer: appReducer, observable: ObservableProperty(FakeAppState()))
                 mockRoutable = MockRoutable()
-                router = Router(store: store, rootRoutable: mockRoutable) { state in
-                    state.select { $0.navigationState }
-                }
-
-                // silence router not read warning, need to keep router alive via reference
+                
+                router = Router(rootRoutable: mockRoutable)
+                store.observable.subscribe({ state in
+                    router.newState(state: state.navigationState)
+                })
                 _ = router
             }
 
@@ -274,8 +288,5 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
                 }
             }
         }
-
-
     }
-    
 }
