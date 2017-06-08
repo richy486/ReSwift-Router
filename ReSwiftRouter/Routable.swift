@@ -12,17 +12,20 @@ public protocol Routable {
 
     func pushRouteSegment(
         _ routeElementIdentifier: RouteElementIdentifier,
+        routeSpecificState: Any?,
         animated: Bool,
         completionHandler: @escaping RoutingCompletionHandler) -> Routable
 
     func popRouteSegment(
         _ routeElementIdentifier: RouteElementIdentifier,
+        routeSpecificState: Any?,
         animated: Bool,
         completionHandler: @escaping RoutingCompletionHandler)
 
     func changeRouteSegment(
         _ from: RouteElementIdentifier,
         to: RouteElementIdentifier,
+        routeSpecificState: Any?,
         animated: Bool,
         completionHandler: @escaping RoutingCompletionHandler) -> Routable
 

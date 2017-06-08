@@ -21,9 +21,11 @@ open class Router<State> {
         self.routables.append(rootRoutable)
     }
 
-    /// TODO: this wont be called!!
+    // TODO: this wont be called without the host app observing the store and passing the navigation state to this function
     open func newState(state: NavigationState) {
         let routingActions = Router.routingActionsForTransitionFrom(lastNavigationState.route, newRoute: state.route)
+        let routeSpecificState = state.routeSpecificState[RouteHash(route: state.route)]
+        
 
         routingActions.forEach { routingAction in
 
@@ -42,6 +44,7 @@ open class Router<State> {
                         self.routables[responsibleRoutableIndex]
                             .popRouteSegment(
                                 segmentToBePopped,
+                                routeSpecificState: routeSpecificState,
                                 animated: state.changeRouteAnimated) {
                                     semaphore.signal()
                         }
@@ -56,6 +59,7 @@ open class Router<State> {
                                 .changeRouteSegment(
                                     segmentToBeReplaced,
                                     to: newSegment,
+                                    routeSpecificState: routeSpecificState,
                                     animated: state.changeRouteAnimated) {
                                         semaphore.signal()
                         }
@@ -67,6 +71,7 @@ open class Router<State> {
                             self.routables[responsibleRoutableIndex]
                                 .pushRouteSegment(
                                     segmentToBePushed,
+                                    routeSpecificState: routeSpecificState,
                                     animated: state.changeRouteAnimated) {
                                         semaphore.signal()
                             }
