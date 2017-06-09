@@ -23,6 +23,7 @@ class MockRoutable: Routable {
 
     func pushRouteSegment(
         _ routeElementIdentifier: RouteElementIdentifier,
+        routeSpecificState: Any?,
         animated: Bool,
         completionHandler: @escaping RoutingCompletionHandler
         ) -> Routable {
@@ -36,6 +37,7 @@ class MockRoutable: Routable {
 
     func popRouteSegment(
         _ routeElementIdentifier: RouteElementIdentifier,
+        routeSpecificState: Any?,
         animated: Bool,
         completionHandler: @escaping RoutingCompletionHandler) {
 
@@ -48,6 +50,7 @@ class MockRoutable: Routable {
     func changeRouteSegment(
         _ from: RouteElementIdentifier,
         to: RouteElementIdentifier,
+        routeSpecificState: Any?,
         animated: Bool,
         completionHandler: @escaping RoutingCompletionHandler
         ) -> Routable {
@@ -131,7 +134,10 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
                             self.calledWithIdentifier = calledWithIdentifier
                         }
 
-                        func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: @escaping RoutingCompletionHandler) -> Routable {
+                        func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
+                                              routeSpecificState: Any?,
+                                              animated: Bool,
+                                              completionHandler: @escaping RoutingCompletionHandler) -> Routable {
                                 calledWithIdentifier(routeElementIdentifier)
 
                                 completionHandler()
@@ -168,7 +174,10 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
                             self.calledWithIdentifier = calledWithIdentifier
                         }
 
-                        func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: @escaping RoutingCompletionHandler) -> Routable {
+                        func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
+                                              routeSpecificState: Any?,
+                                              animated: Bool,
+                                              completionHandler: @escaping RoutingCompletionHandler) -> Routable {
                                 calledWithIdentifier(routeElementIdentifier)
 
                                 completionHandler()
@@ -191,8 +200,9 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
                             }
 
                             func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
-                                animated: Bool,
-                                completionHandler: @escaping RoutingCompletionHandler) -> Routable {
+                                                  routeSpecificState: Any?,
+                                                  animated: Bool,
+                                                  completionHandler: @escaping RoutingCompletionHandler) -> Routable {
                                     completionHandler()
                                     return injectedRoutable
                             }

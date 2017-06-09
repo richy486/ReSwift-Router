@@ -35,6 +35,7 @@ extension Routable {
 
     public func pushRouteSegment(
         _ routeElementIdentifier: RouteElementIdentifier,
+        routeSpecificState: Any?,
         animated: Bool,
         completionHandler: @escaping RoutingCompletionHandler) -> Routable {
             fatalError("This routable cannot change segments. You have not implemented it.")
@@ -42,6 +43,7 @@ extension Routable {
 
     public func popRouteSegment(
         _ routeElementIdentifier: RouteElementIdentifier,
+        routeSpecificState: Any?,
         animated: Bool,
         completionHandler: @escaping RoutingCompletionHandler) {
             fatalError("This routable cannot change segments. You have not implemented it.")
@@ -50,6 +52,7 @@ extension Routable {
     public func changeRouteSegment(
         _ from: RouteElementIdentifier,
         to: RouteElementIdentifier,
+        routeSpecificState: Any?,
         animated: Bool,
         completionHandler: @escaping RoutingCompletionHandler) -> Routable {
             fatalError("This routable cannot change segments. You have not implemented it.")
