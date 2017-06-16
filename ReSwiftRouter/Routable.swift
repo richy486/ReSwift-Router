@@ -6,23 +6,28 @@
 //  Copyright © 2015 DigiTales. All rights reserved.
 //
 
+import ReactiveReSwift
+
 public typealias RoutingCompletionHandler = () -> Void
 
 public protocol Routable {
 
     func pushRouteSegment(
         _ routeElementIdentifier: RouteElementIdentifier,
+        routeSpecificStateObserver: ObservableProperty<Any>?,
         animated: Bool,
         completionHandler: @escaping RoutingCompletionHandler) -> Routable
 
     func popRouteSegment(
         _ routeElementIdentifier: RouteElementIdentifier,
+        routeSpecificStateObserver: ObservableProperty<Any>?,
         animated: Bool,
         completionHandler: @escaping RoutingCompletionHandler)
 
     func changeRouteSegment(
         _ from: RouteElementIdentifier,
         to: RouteElementIdentifier,
+        routeSpecificStateObserver: ObservableProperty<Any>?,
         animated: Bool,
         completionHandler: @escaping RoutingCompletionHandler) -> Routable
 
@@ -32,6 +37,7 @@ extension Routable {
 
     public func pushRouteSegment(
         _ routeElementIdentifier: RouteElementIdentifier,
+        routeSpecificStateObserver: ObservableProperty<Any>?,
         animated: Bool,
         completionHandler: @escaping RoutingCompletionHandler) -> Routable {
             fatalError("This routable cannot change segments. You have not implemented it.")
@@ -39,6 +45,7 @@ extension Routable {
 
     public func popRouteSegment(
         _ routeElementIdentifier: RouteElementIdentifier,
+        routeSpecificStateObserver: ObservableProperty<Any>?,
         animated: Bool,
         completionHandler: @escaping RoutingCompletionHandler) {
             fatalError("This routable cannot change segments. You have not implemented it.")
@@ -47,6 +54,7 @@ extension Routable {
     public func changeRouteSegment(
         _ from: RouteElementIdentifier,
         to: RouteElementIdentifier,
+        routeSpecificStateObserver: ObservableProperty<Any>?,
         animated: Bool,
         completionHandler: @escaping RoutingCompletionHandler) -> Routable {
             fatalError("This routable cannot change segments. You have not implemented it.")

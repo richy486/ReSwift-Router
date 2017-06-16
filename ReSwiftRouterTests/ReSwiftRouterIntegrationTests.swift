@@ -23,6 +23,7 @@ class MockRoutable: Routable {
 
     func pushRouteSegment(
         _ routeElementIdentifier: RouteElementIdentifier,
+        routeSpecificStateObserver: ObservableProperty<Any>?,
         animated: Bool,
         completionHandler: @escaping RoutingCompletionHandler
         ) -> Routable {
@@ -36,6 +37,7 @@ class MockRoutable: Routable {
 
     func popRouteSegment(
         _ routeElementIdentifier: RouteElementIdentifier,
+        routeSpecificStateObserver: ObservableProperty<Any>?,
         animated: Bool,
         completionHandler: @escaping RoutingCompletionHandler) {
 
@@ -48,6 +50,7 @@ class MockRoutable: Routable {
     func changeRouteSegment(
         _ from: RouteElementIdentifier,
         to: RouteElementIdentifier,
+        routeSpecificStateObserver: ObservableProperty<Any>?,
         animated: Bool,
         completionHandler: @escaping RoutingCompletionHandler
         ) -> Routable {
@@ -134,7 +137,10 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
                             self.calledWithIdentifier = calledWithIdentifier
                         }
 
-                        func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: @escaping RoutingCompletionHandler) -> Routable {
+                        func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
+                                              routeSpecificStateObserver: ObservableProperty<Any>?,
+                                              animated: Bool,
+                                              completionHandler: @escaping RoutingCompletionHandler) -> Routable {
                                 calledWithIdentifier(routeElementIdentifier)
 
                                 completionHandler()
@@ -175,7 +181,10 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
                             self.calledWithIdentifier = calledWithIdentifier
                         }
 
-                        func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: @escaping RoutingCompletionHandler) -> Routable {
+                        func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
+                                              routeSpecificStateObserver: ObservableProperty<Any>?,
+                                              animated: Bool,
+                                              completionHandler: @escaping RoutingCompletionHandler) -> Routable {
                                 calledWithIdentifier(routeElementIdentifier)
 
                                 completionHandler()
@@ -203,7 +212,8 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
                             }
 
                             func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
-                                animated: Bool,
+                                                  routeSpecificStateObserver: ObservableProperty<Any>?,
+                                                  animated: Bool,
                                 completionHandler: @escaping RoutingCompletionHandler) -> Routable {
                                     completionHandler()
                                     return injectedRoutable
@@ -246,17 +256,15 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
                 beforeEach {
                     store.dispatch(SetRouteSpecificData(route: route,
                                                         data: "UserID_10"))
-                    
                 }
 
                 it("allows accessing the data when providing the expected type") {
 
-                    let data: String? = store.observable.value.navigationState.getRouteSpecificState(route)
+                    let data: String? = store.observable.value.navigationState.getRouteSpecificStateObserver(route)?.value as? String
 
                     expect(data).toEventually(equal("UserID_10"))
                 }
             }
-            
         }
 
         describe("configuring animated/unanimated navigation") {

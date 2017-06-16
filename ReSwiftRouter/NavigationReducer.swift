@@ -47,8 +47,12 @@ public struct NavigationReducer {
             let routeHash = RouteHash(route: route)
 
             var state = state
-
-            state.routeSpecificState[routeHash] = data
+        
+            if let observer = state.routeSpecificStateObservers[routeHash] {
+                observer.value = data
+            } else {
+                state.routeSpecificStateObservers[routeHash] = ObservableProperty(data)
+            }
 
             return state
     }
