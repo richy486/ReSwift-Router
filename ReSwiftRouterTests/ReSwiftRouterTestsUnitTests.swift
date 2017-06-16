@@ -20,14 +20,17 @@ class ReSwiftRouterUnitTests: QuickSpec {
     override func spec() {
         describe("routing calls") {
 
-            let tabBarViewControllerIdentifier = "TabBarViewController"
-            let counterViewControllerIdentifier = "CounterViewController"
-            let statsViewControllerIdentifier = "StatsViewController"
-            let infoViewControllerIdentifier = "InfoViewController"
+            enum Routes: RouteElement {
+                case tabBarViewControllerIdentifier
+                case counterViewControllerIdentifier
+                case statsViewControllerIdentifier
+                case infoViewControllerIdentifier
+            }
 
             it("calculates transitions from an empty route to a multi segment route") {
                 let oldRoute: Route = []
-                let newRoute = [tabBarViewControllerIdentifier, statsViewControllerIdentifier]
+                let newRoute = [RouteIdentifiable(element: Routes.tabBarViewControllerIdentifier),
+                                RouteIdentifiable(element: Routes.statsViewControllerIdentifier)]
 
                 let routingActions = Router<AppState>.routingActionsForTransitionFrom(oldRoute,
                     newRoute: newRoute)
@@ -39,7 +42,7 @@ class ReSwiftRouterUnitTests: QuickSpec {
                     = routingActions[0] {
 
                         if responsibleRoutableIndex == 0
-                            && segmentToBePushed == tabBarViewControllerIdentifier {
+                            && segmentToBePushed.element == Routes.tabBarViewControllerIdentifier {
                                 action1Correct = true
                         }
                 }
@@ -48,7 +51,7 @@ class ReSwiftRouterUnitTests: QuickSpec {
                     = routingActions[1] {
 
                         if responsibleRoutableIndex == 1
-                            && segmentToBePushed == statsViewControllerIdentifier {
+                            && segmentToBePushed.element == Routes.statsViewControllerIdentifier {
                             action2Correct = true
                         }
                 }
@@ -59,8 +62,11 @@ class ReSwiftRouterUnitTests: QuickSpec {
             }
 
             it("generates a Change action on the last common subroute") {
-                let oldRoute = [tabBarViewControllerIdentifier, counterViewControllerIdentifier]
-                let newRoute = [tabBarViewControllerIdentifier, statsViewControllerIdentifier]
+                let commonSubroute = RouteIdentifiable(element: Routes.tabBarViewControllerIdentifier)
+                let oldRoute = [commonSubroute,
+                                RouteIdentifiable(element: Routes.counterViewControllerIdentifier)]
+                let newRoute = [commonSubroute,
+                                RouteIdentifiable(element: Routes.statsViewControllerIdentifier)]
 
                 let routingActions = Router<AppState>.routingActionsForTransitionFrom(oldRoute,
                     newRoute: newRoute)
@@ -69,24 +75,33 @@ class ReSwiftRouterUnitTests: QuickSpec {
                 var toBeReplaced: RouteElementIdentifier?
                 var new: RouteElementIdentifier?
 
-                if case let RoutingActions.change(responsibleControllerIndex,
-                    controllerToBeReplaced,
-                    newController) = routingActions.first! {
-                        controllerIndex = responsibleControllerIndex
-                        toBeReplaced = controllerToBeReplaced
-                        new = newController
+                if case let RoutingActions.change(responsibleControllerIndex, controllerToBeReplaced, newController) = routingActions.first! {
+                    controllerIndex = responsibleControllerIndex
+                    toBeReplaced = controllerToBeReplaced
+                    new = newController
                 }
+                
+                
 
                 expect(routingActions).to(haveCount(1))
                 expect(controllerIndex).to(equal(1))
-                expect(toBeReplaced).to(equal(counterViewControllerIdentifier))
-                expect(new).to(equal(statsViewControllerIdentifier))
+                expect(Routes.counterViewControllerIdentifier).to(equal(Routes.counterViewControllerIdentifier))
+                
+                guard let toBeReplacedElement = toBeReplaced?.element, let newElement = new?.element else {
+                    fail()
+                    return
+                }
+                expect(toBeReplacedElement == Routes.counterViewControllerIdentifier).to(beTrue())
+                expect(newElement == Routes.statsViewControllerIdentifier).to(beTrue())
             }
 
             it("generates a Change action on the last common subroute, also for routes of different length") {
-                let oldRoute = [tabBarViewControllerIdentifier, counterViewControllerIdentifier]
-                let newRoute = [tabBarViewControllerIdentifier, statsViewControllerIdentifier,
-                    infoViewControllerIdentifier]
+                let commonSubroute = RouteIdentifiable(element: Routes.tabBarViewControllerIdentifier)
+                let oldRoute = [commonSubroute,
+                                RouteIdentifiable(element: Routes.counterViewControllerIdentifier)]
+                let newRoute = [commonSubroute,
+                                RouteIdentifiable(element: Routes.statsViewControllerIdentifier),
+                                RouteIdentifiable(element: Routes.infoViewControllerIdentifier)]
 
                 let routingActions = Router<AppState>.routingActionsForTransitionFrom(oldRoute,
                     newRoute: newRoute)
@@ -99,8 +114,8 @@ class ReSwiftRouterUnitTests: QuickSpec {
                     = routingActions[0] {
 
                         if responsibleRoutableIndex == 1
-                            && segmentToBeReplaced == counterViewControllerIdentifier
-                            && newSegment == statsViewControllerIdentifier{
+                            && segmentToBeReplaced.element == Routes.counterViewControllerIdentifier
+                            && newSegment.element == Routes.statsViewControllerIdentifier{
                                 action1Correct = true
                         }
                 }
@@ -109,7 +124,7 @@ class ReSwiftRouterUnitTests: QuickSpec {
                     = routingActions[1] {
 
                         if responsibleRoutableIndex == 2
-                            && segmentToBePushed == infoViewControllerIdentifier {
+                            && segmentToBePushed.element == Routes.infoViewControllerIdentifier {
 
                                 action2Correct = true
                         }
@@ -121,8 +136,8 @@ class ReSwiftRouterUnitTests: QuickSpec {
             }
 
             it("generates a Change action on root when root element changes") {
-                let oldRoute = [tabBarViewControllerIdentifier]
-                let newRoute = [statsViewControllerIdentifier]
+                let oldRoute = [RouteIdentifiable(element: Routes.tabBarViewControllerIdentifier)]
+                let newRoute = [RouteIdentifiable(element: Routes.statsViewControllerIdentifier)]
 
                 let routingActions = Router<AppState>.routingActionsForTransitionFrom(oldRoute,
                     newRoute: newRoute)
@@ -141,8 +156,14 @@ class ReSwiftRouterUnitTests: QuickSpec {
 
                 expect(routingActions).to(haveCount(1))
                 expect(controllerIndex).to(equal(0))
-                expect(toBeReplaced).to(equal(tabBarViewControllerIdentifier))
-                expect(new).to(equal(statsViewControllerIdentifier))
+
+                guard let toBeReplacedElement = toBeReplaced?.element, let newElement = new?.element else {
+                    fail()
+                    return
+                }
+
+                expect(toBeReplacedElement == Routes.tabBarViewControllerIdentifier).to(beTrue())
+                expect(newElement == Routes.statsViewControllerIdentifier).to(beTrue())
             }
 
             it("calculates no actions for transition from empty route to empty route") {
@@ -156,8 +177,11 @@ class ReSwiftRouterUnitTests: QuickSpec {
             }
 
             it("calculates no actions for transitions between identical, non-empty routes") {
-                let oldRoute = [tabBarViewControllerIdentifier, statsViewControllerIdentifier]
-                let newRoute = [tabBarViewControllerIdentifier, statsViewControllerIdentifier]
+                let routeElementTabBar = RouteIdentifiable(element: Routes.tabBarViewControllerIdentifier)
+                let routeElementStatus = RouteIdentifiable(element: Routes.statsViewControllerIdentifier)
+                
+                let oldRoute = [routeElementTabBar, routeElementStatus]
+                let newRoute = [routeElementTabBar, routeElementStatus]
 
                 let routingActions = Router<AppState>.routingActionsForTransitionFrom(oldRoute,
                     newRoute: newRoute)
@@ -166,9 +190,15 @@ class ReSwiftRouterUnitTests: QuickSpec {
             }
 
             it("calculates transitions with multiple pops") {
-                let oldRoute = [tabBarViewControllerIdentifier, statsViewControllerIdentifier,
-                    counterViewControllerIdentifier]
-                let newRoute = [tabBarViewControllerIdentifier]
+
+                let commonSubroute = RouteIdentifiable(element: Routes.tabBarViewControllerIdentifier)
+                
+                let oldRoute = [commonSubroute,
+                                RouteIdentifiable(element: Routes.statsViewControllerIdentifier),
+                                RouteIdentifiable(element: Routes.counterViewControllerIdentifier)]
+                let newRoute = [commonSubroute]
+                
+                
 
                 let routingActions = Router<AppState>.routingActionsForTransitionFrom(oldRoute,
                     newRoute: newRoute)
@@ -180,7 +210,7 @@ class ReSwiftRouterUnitTests: QuickSpec {
                     = routingActions[0] {
 
                         if responsibleRoutableIndex == 2
-                            && segmentToBePopped == counterViewControllerIdentifier {
+                            && segmentToBePopped.element == Routes.counterViewControllerIdentifier {
                                 action1Correct = true
                             }
                 }
@@ -189,7 +219,7 @@ class ReSwiftRouterUnitTests: QuickSpec {
                     = routingActions[1] {
 
                         if responsibleRoutableIndex == 1
-                            && segmentToBePopped == statsViewControllerIdentifier {
+                            && segmentToBePopped.element == Routes.statsViewControllerIdentifier {
                                 action2Correct = true
                         }
                 }
@@ -200,9 +230,12 @@ class ReSwiftRouterUnitTests: QuickSpec {
             }
 
             it("calculates transitions with multiple pushes") {
-                let oldRoute = [tabBarViewControllerIdentifier]
-                let newRoute = [tabBarViewControllerIdentifier, statsViewControllerIdentifier,
-                    counterViewControllerIdentifier]
+                let commonSubroute = RouteIdentifiable(element: Routes.tabBarViewControllerIdentifier)
+                
+                let oldRoute = [commonSubroute]
+                let newRoute = [commonSubroute,
+                                RouteIdentifiable(element: Routes.statsViewControllerIdentifier),
+                                RouteIdentifiable(element: Routes.counterViewControllerIdentifier)]
 
                 let routingActions = Router<AppState>.routingActionsForTransitionFrom(oldRoute,
                     newRoute: newRoute)
@@ -214,7 +247,7 @@ class ReSwiftRouterUnitTests: QuickSpec {
                     = routingActions[0] {
 
                         if responsibleRoutableIndex == 1
-                            && segmentToBePushed == statsViewControllerIdentifier {
+                            && segmentToBePushed.element == Routes.statsViewControllerIdentifier {
                                 action1Correct = true
                         }
                 }
@@ -223,7 +256,7 @@ class ReSwiftRouterUnitTests: QuickSpec {
                     = routingActions[1] {
 
                         if responsibleRoutableIndex == 2
-                            && segmentToBePushed == counterViewControllerIdentifier {
+                            && segmentToBePushed.element == Routes.counterViewControllerIdentifier {
                                 action2Correct = true
                         }
                 }

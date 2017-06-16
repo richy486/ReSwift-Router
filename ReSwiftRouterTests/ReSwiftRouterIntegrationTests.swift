@@ -91,6 +91,11 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
         describe("routing calls") {
 
             var store: Store<ObservableProperty<FakeAppState>>!
+            
+            enum Routes: RouteElement {
+                case tabBarViewController
+                case secondViewController
+            }
 
             beforeEach {
                 store = Store(reducer: appReducer, observable: ObservableProperty(FakeAppState()))
@@ -119,9 +124,7 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
 
                 it("requests the root with identifier when an initial route is provided") {
                     store.dispatch(
-                        SetRouteAction(
-                            ["TabBarViewController"]
-                        )
+                        SetRouteAction([RouteIdentifiable(element: Routes.tabBarViewController)])
                     )
 
                     class FakeRootRoutable: Routable {
@@ -142,7 +145,11 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
 
                     waitUntil(timeout: 2.0) { fullfill in
                         let rootRoutable = FakeRootRoutable { identifier in
-                            if identifier == "TabBarViewController" {
+                            guard let identifier = identifier else {
+                                return
+                            }
+                            
+                            if Routes.tabBarViewController == identifier.element{
                                 fullfill()
                             }
                         }
@@ -156,9 +163,9 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
 
                 it("calls push on the root for a route with two elements") {
                     store.dispatch(
-                        SetRouteAction(
-                            ["TabBarViewController", "SecondViewController"]
-                        )
+                        
+                        SetRouteAction([RouteIdentifiable(element: Routes.tabBarViewController),
+                                        RouteIdentifiable(element: Routes.secondViewController)])
                     )
 
                     class FakeChildRoutable: Routable {
@@ -178,7 +185,12 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
 
                     waitUntil(timeout: 5.0) { completion in
                         let fakeChildRoutable = FakeChildRoutable() { identifier in
-                            if identifier == "SecondViewController" {
+                            
+                            guard let identifier = identifier else {
+                                return
+                            }
+                            
+                            if identifier.element == Routes.secondViewController {
                                 completion()
                             }
                         }
@@ -213,6 +225,11 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
         describe("route specific data") {
 
             var store: Store<ObservableProperty<FakeAppState>>!
+            
+            enum Routes: RouteElement {
+                case part1
+                case part2
+            }
 
             beforeEach {
                 store = Store(reducer: appReducer, observable: ObservableProperty(FakeAppState()))
@@ -223,20 +240,21 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
             }
 
             context("when setting route specific data") {
-
+                
+                let route = [RouteIdentifiable(element: Routes.part1), RouteIdentifiable(element: Routes.part1)]
+                
                 beforeEach {
-                    store.dispatch(SetRouteSpecificData(route: ["part1", "part2"], data: "UserID_10"))
+                    store.dispatch(SetRouteSpecificData(route: route,
+                                                        data: "UserID_10"))
+                    
                 }
 
                 it("allows accessing the data when providing the expected type") {
 
-                    let data: String? = store.observable.value.navigationState.getRouteSpecificState(
-                        ["part1", "part2"]
-                    )
+                    let data: String? = store.observable.value.navigationState.getRouteSpecificState(route)
 
                     expect(data).toEventually(equal("UserID_10"))
                 }
-                
             }
             
         }
@@ -246,6 +264,10 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
             var store: Store<ObservableProperty<FakeAppState>>!
             var mockRoutable: MockRoutable!
             var router: Router<FakeAppState>!
+            
+            enum Routes: RouteElement {
+                case someRoute
+            }
 
             beforeEach {
                 store = Store(reducer: appReducer, observable: ObservableProperty(FakeAppState()))
@@ -260,7 +282,7 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
 
             context("when dispatching an animated route change") {
                 beforeEach {
-                    store.dispatch(SetRouteAction(["someRoute"], animated: true))
+                    store.dispatch(SetRouteAction([RouteIdentifiable(element: Routes.someRoute)], animated: true))
                 }
 
                 it("calls routables asking for an animated presentation") {
@@ -270,7 +292,7 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
 
             context("when dispatching an unanimated route change") {
                 beforeEach {
-                    store.dispatch(SetRouteAction(["someRoute"], animated: false))
+                    store.dispatch(SetRouteAction([RouteIdentifiable(element: Routes.someRoute)], animated: false))
                 }
 
                 it("calls routables asking for an animated presentation") {
@@ -280,7 +302,7 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
 
             context("when dispatching a default route change") {
                 beforeEach {
-                    store.dispatch(SetRouteAction(["someRoute"]))
+                    store.dispatch(SetRouteAction([RouteIdentifiable(element: Routes.someRoute)]))
                 }
 
                 it("calls routables asking for an animated presentation") {

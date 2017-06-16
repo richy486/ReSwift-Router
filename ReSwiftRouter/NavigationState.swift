@@ -8,7 +8,7 @@
 
 import ReactiveReSwift
 
-public typealias RouteElementIdentifier = String
+public typealias RouteElementIdentifier = RouteIdentifiable
 public typealias Route = [RouteElementIdentifier]
 
 /// A `Hashable` and `Equatable` presentation of a route.

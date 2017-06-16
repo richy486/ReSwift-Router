@@ -10,6 +10,13 @@ import ReactiveReSwiftRouter
 import Quick
 import Nimble
 
+enum RouteHashTestsRoutes: RouteElement {
+    case part1
+    case part2
+    case part3
+    case part4
+}
+
 class RouteHashTests: QuickSpec {
 
     override func spec() {
@@ -20,8 +27,12 @@ class RouteHashTests: QuickSpec {
             var routeHash2: RouteHash!
 
             beforeEach {
-                routeHash1 = RouteHash(route: ["part1", "part2"])
-                routeHash2 = RouteHash(route: ["part1", "part2"])
+                
+                let routePart1 = RouteIdentifiable(element: RouteHashTestsRoutes.part1)
+                let routePart2 = RouteIdentifiable(element: RouteHashTestsRoutes.part2)
+                
+                routeHash1 = RouteHash(route: [routePart1, routePart2])
+                routeHash2 = RouteHash(route: [routePart1, routePart2])
             }
 
             it("both hashs are considered equal") {
@@ -36,8 +47,11 @@ class RouteHashTests: QuickSpec {
             var routeHash2: RouteHash!
 
             beforeEach {
-                routeHash1 = RouteHash(route: ["part1", "part2"])
-                routeHash2 = RouteHash(route: ["part3", "part4"])
+                routeHash1 = RouteHash(route: [RouteIdentifiable(element: RouteHashTestsRoutes.part1),
+                                               RouteIdentifiable(element: RouteHashTestsRoutes.part2)])
+                
+                routeHash2 = RouteHash(route: [RouteIdentifiable(element: RouteHashTestsRoutes.part3),
+                                               RouteIdentifiable(element: RouteHashTestsRoutes.part4)])
             }
 
             it("they are considered unequal") {
