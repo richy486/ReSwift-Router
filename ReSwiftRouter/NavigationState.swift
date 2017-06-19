@@ -31,13 +31,13 @@ public struct NavigationState {
     public init() {}
 
     public var route: Route = []
-    public var routeSpecificStateObservers: [RouteHash: ObservableProperty<Any>] = [:]
+    public var routeSpecificStateObservers: [RouteHash: RouteSpecificStateObserver] = [:]
     
     var changeRouteAnimated: Bool = true
 }
 
 extension NavigationState {
-    public func getRouteSpecificStateObserver(_ route: Route) -> ObservableProperty<Any>? {
+    public func getRouteSpecificStateObserver(_ route: Route) -> RouteSpecificStateObserver? {
         let hash = RouteHash(route: route)
         
         return self.routeSpecificStateObservers[hash]

@@ -23,7 +23,7 @@ class MockRoutable: Routable {
 
     func pushRouteSegment(
         _ routeElementIdentifier: RouteElementIdentifier,
-        routeSpecificStateObserver: ObservableProperty<Any>?,
+        routeSpecificStateObserver: RouteSpecificStateObserver?,
         animated: Bool,
         completionHandler: @escaping RoutingCompletionHandler
         ) -> Routable {
@@ -37,7 +37,7 @@ class MockRoutable: Routable {
 
     func popRouteSegment(
         _ routeElementIdentifier: RouteElementIdentifier,
-        routeSpecificStateObserver: ObservableProperty<Any>?,
+        routeSpecificStateObserver: RouteSpecificStateObserver?,
         animated: Bool,
         completionHandler: @escaping RoutingCompletionHandler) {
 
@@ -50,7 +50,7 @@ class MockRoutable: Routable {
     func changeRouteSegment(
         _ from: RouteElementIdentifier,
         to: RouteElementIdentifier,
-        routeSpecificStateObserver: ObservableProperty<Any>?,
+        routeSpecificStateObserver: RouteSpecificStateObserver?,
         animated: Bool,
         completionHandler: @escaping RoutingCompletionHandler
         ) -> Routable {
@@ -84,6 +84,14 @@ class TestStoreSubscriber<T> {
     
     init() {
         subscription = { self.receivedStates.append($0) }
+    }
+}
+
+struct MockRouteSpecificStateObserver: RouteSpecificStateObserver {
+    
+    public var value: RouteSpecificStateObserver.ValueType
+    init(withValue value: RouteSpecificStateObserver.ValueType) {
+        self.value = value
     }
 }
 
@@ -138,7 +146,7 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
                         }
 
                         func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
-                                              routeSpecificStateObserver: ObservableProperty<Any>?,
+                                              routeSpecificStateObserver: RouteSpecificStateObserver?,
                                               animated: Bool,
                                               completionHandler: @escaping RoutingCompletionHandler) -> Routable {
                                 calledWithIdentifier(routeElementIdentifier)
@@ -182,7 +190,7 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
                         }
 
                         func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
-                                              routeSpecificStateObserver: ObservableProperty<Any>?,
+                                              routeSpecificStateObserver: RouteSpecificStateObserver?,
                                               animated: Bool,
                                               completionHandler: @escaping RoutingCompletionHandler) -> Routable {
                                 calledWithIdentifier(routeElementIdentifier)
@@ -212,7 +220,7 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
                             }
 
                             func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
-                                                  routeSpecificStateObserver: ObservableProperty<Any>?,
+                                                  routeSpecificStateObserver: RouteSpecificStateObserver?,
                                                   animated: Bool,
                                 completionHandler: @escaping RoutingCompletionHandler) -> Routable {
                                     completionHandler()
@@ -255,7 +263,7 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
                 
                 beforeEach {
                     store.dispatch(SetRouteSpecificData(route: route,
-                                                        data: "UserID_10"))
+                                                        routeSpecificStateObserver: MockRouteSpecificStateObserver(withValue: "UserID_10")))
                 }
 
                 it("allows accessing the data when providing the expected type") {

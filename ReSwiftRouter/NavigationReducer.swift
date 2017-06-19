@@ -23,7 +23,8 @@ public struct NavigationReducer {
         case let action as SetRouteAction:
             return setRoute(state, setRouteAction: action)
         case let action as SetRouteSpecificData:
-            return setRouteSpecificData(state, route: action.route, data: action.data)
+            return setRouteSpecificData(state, route: action.route,
+                                        routeSpecificStateObserver: action.routeSpecificStateObserver)
         default:
             break
         }
@@ -43,15 +44,13 @@ public struct NavigationReducer {
     static func setRouteSpecificData(
         _ state: NavigationState,
         route: Route,
-        data: Any) -> NavigationState{
+        routeSpecificStateObserver: RouteSpecificStateObserver?) -> NavigationState{
             let routeHash = RouteHash(route: route)
 
             var state = state
-        
-            if let observer = state.routeSpecificStateObservers[routeHash] {
-                observer.value = data
-            } else {
-                state.routeSpecificStateObservers[routeHash] = ObservableProperty(data)
+
+            if let routeSpecificStateObserver = routeSpecificStateObserver {
+                state.routeSpecificStateObservers[routeHash] = routeSpecificStateObserver
             }
 
             return state
