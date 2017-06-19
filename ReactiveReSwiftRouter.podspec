@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "ReactiveReSwiftRouter"
-  s.version          = "1.0.0"
+  s.version          = "2.0.0"
   s.summary          = "Declarative Routing for ReactiveReSwift"
   s.description      = <<-DESC
                           A declarative router for ReactiveReSwift. Allows developers to declare routes in a similar manner as
