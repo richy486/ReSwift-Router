@@ -267,8 +267,11 @@ class SwiftFlowRouterIntegrationTests: QuickSpec {
                 }
 
                 it("allows accessing the data when providing the expected type") {
-
-                    let data: String? = store.observable.value.navigationState.getRouteSpecificStateObserver(route)?.value as? String
+                    
+                    var data: String? = nil
+                    if let mockObserver = store.observable.value.navigationState.getRouteSpecificStateObserver(route) as? MockRouteSpecificStateObserver {
+                        data = mockObserver.value as? String
+                    }
 
                     expect(data).toEventually(equal("UserID_10"))
                 }

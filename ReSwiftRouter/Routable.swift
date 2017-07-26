@@ -13,10 +13,6 @@ public typealias RoutingCompletionHandler = () -> Void
 public protocol RouteSpecificStateObserver {
     
     typealias ValueType = Any
-    
-    var value: ValueType { get set }
-    
-    init(withValue value: ValueType)
 }
 
 public protocol Routable {
