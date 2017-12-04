@@ -89,8 +89,8 @@ class TestStoreSubscriber<T> {
 
 struct MockRouteSpecificStateObserver: RouteSpecificStateObserver {
     
-    public var value: RouteSpecificStateObserver.ValueType
-    init(withValue value: RouteSpecificStateObserver.ValueType) {
+    public var value: Any
+    init(withValue value: Any) {
         self.value = value
     }
 }

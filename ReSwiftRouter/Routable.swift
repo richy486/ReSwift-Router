@@ -10,9 +10,7 @@ import ReactiveReSwift
 
 public typealias RoutingCompletionHandler = () -> Void
 
-public protocol RouteSpecificStateObserver {
-    
-    typealias ValueType = Any
+public protocol RouteSpecificStateObserver {    
 }
 
 public protocol Routable {
