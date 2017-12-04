@@ -32,7 +32,7 @@ extension Array where Element == RouteIdentifiable {
     public func joined(separator: String) -> String {
         return reduce("") { (result, element) -> String in
             var result = result
-            if result.characters.count > 0 {
+            if result.count > 0 {
                 result.append(separator)
             }
             result.append("\(element.element)-\(element.identifier)")

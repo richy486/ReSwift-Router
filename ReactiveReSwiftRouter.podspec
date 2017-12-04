@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "ReactiveReSwiftRouter"
-  s.version          = "2.0.2"
+  s.version          = "4.0.0"
   s.summary          = "Declarative Routing for ReactiveReSwift"
   s.description      = <<-DESC
                           A declarative router for ReactiveReSwift. Allows developers to declare routes in a similar manner as
@@ -27,5 +27,5 @@ Pod::Spec.new do |s|
   s.watchos.deployment_target = '2.0'
   s.requires_arc = true
   s.source_files     = 'ReSwiftRouter/**/*.swift'
-  s.dependency 'ReactiveReSwift', '~> 3.0.6'
+  s.dependency 'ReactiveReSwift', '~> 4.0.0'
 end
